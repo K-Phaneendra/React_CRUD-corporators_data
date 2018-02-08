@@ -6,7 +6,20 @@ import {cancelFun2} from '../actions/allActions';
 import {addCityFormFun} from '../actions/allActions';
 import {cancelAddCityOnlyFun} from '../actions/allActions';
 import {addCityOnlyDataFun} from '../actions/allActions';
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
+import Modal from 'react-responsive-modal';
+
+const customStyle = {
+    modal: {
+        width: '20%',
+        margin: '1em auto',
+        top: '5%',
+        boxShadow: '0 5px 10px rgba(0, 0, 0, .3)'
+    },
+    closeIcon: {
+        display: 'none'
+    }
+};
 
 class AddCityOnlyForm extends Component{
     constructor(){
@@ -27,9 +40,11 @@ class AddCityOnlyForm extends Component{
             return null;
         }
         return(
-            <Modal isOpen={true}>
+            <Modal open={true} styles={customStyle}>
             <div className="editDiv">
-            <h3>Type a City Name</h3>
+            <div className="headingh3div">
+            <h3 className="headingh3">Type a City Name</h3>
+            </div>
             <form name='addCityOnlyForm' className='eForm'>
                 <label>City Name: </label>
                 <input type='textbox' className='editForm' name='addCityOnlyNameBox'/><br/>

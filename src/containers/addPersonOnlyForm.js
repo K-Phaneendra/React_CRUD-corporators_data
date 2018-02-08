@@ -5,7 +5,20 @@ import './containerStyles.css';
 import {addPersonFormFun} from '../actions/allActions';
 import {addPersonOnlyCancelFun} from '../actions/allActions';
 import {addPersonOnlyDataFun} from '../actions/allActions';
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
+import Modal from 'react-responsive-modal';
+
+const customStyle = {
+    modal: {
+        width: '20%',
+        margin: '1em auto',
+        top: '5%',
+        boxShadow: '0 5px 10px rgba(0, 0, 0, .3)'
+    },
+    closeIcon: {
+        display: 'none'
+    }
+};
 
 class AddPersonOnlyForm extends Component{
     constructor(){
@@ -45,26 +58,28 @@ class AddPersonOnlyForm extends Component{
             return null;
         }
         return(
-            <Modal isOpen={true}>
-            <div className="editDiv">
-            <h3>You can Add a Person Here</h3>
-            <form name='addPersonForm' className='eForm'>
-            <label>Select City: </label>
-            <select name='addPersonCityBox' className='editForm'>
-                <option>Select City</option>
-                {this.cityNamesFun(this.props.tabData)}
-            </select>
-                <label>Corporator Name: </label>
-                <input type='textbox' className='editForm' name='addPersonNameBox'/><br/>
-                <label>Corporator Area: </label>
-                <input type='textbox' className='editForm' name='addPersonAreaBox'/><br/>
-                <label>Corporator Age: </label>
-                <input type='textbox' className='editForm' name='addPersonAgeBox'/><br/>
-                <input type='button' className="Edit_Del" id="upd" value='Submit' onClick={()=>this.handleAddPerson()}/>
-                <input type='button' className="Edit_Del" id="canc" value='Cancel' onClick={()=>this.props.dispatch(addPersonOnlyCancelFun())}/>
-            </form>
-        </div>
-        </Modal>
+            <Modal open={true} styles={customStyle}>
+                <div className="editDiv">
+                    <div className="headingh3div">
+                        <h3 className="headingh3">You can Add a Person Here</h3>
+                    </div>
+                    <form name='addPersonForm' className='eForm'>
+                    <label>Select City: </label>
+                    <select name='addPersonCityBox' className='editForm'>
+                        <option>Select City</option>
+                        {this.cityNamesFun(this.props.tabData)}
+                    </select>
+                        <label>Corporator Name: </label>
+                        <input type='textbox' className='editForm' name='addPersonNameBox'/><br/>
+                        <label>Corporator Area: </label>
+                        <input type='textbox' className='editForm' name='addPersonAreaBox'/><br/>
+                        <label>Corporator Age: </label>
+                        <input type='textbox' className='editForm' name='addPersonAgeBox'/><br/>
+                        <input type='button' className="Edit_Del" id="upd" value='Submit' onClick={()=>this.handleAddPerson()}/>
+                        <input type='button' className="Edit_Del" id="canc" value='Cancel' onClick={()=>this.props.dispatch(addPersonOnlyCancelFun())}/>
+                    </form>
+                </div>
+            </Modal>
         )
     }
 }

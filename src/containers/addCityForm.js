@@ -7,6 +7,18 @@ import {addCityFormFun} from '../actions/allActions';
 // import Modal from 'react-modal';
 import Modal from 'react-responsive-modal';
 
+const customStyle = {
+    modal: {
+        width: '20%',
+        margin: '1em auto',
+        top: '5%',
+        boxShadow: '0 5px 10px rgba(0, 0, 0, .3)'
+    },
+    closeIcon: {
+        display: 'none'
+    }
+};
+
 class AddCityForm extends Component{
     constructor(){
         super();
@@ -48,21 +60,23 @@ class AddCityForm extends Component{
             return null;
         }
         return(
-            <Modal open={true}>
+            <Modal open={true} styles={customStyle}>
                 <div className="editDiv">
-                <h3>Add a Person <br/>with New City Name</h3>
-                <form name='addForm' className='eForm'>
-                    <label>City Name: </label>
-                    <input type='textbox' className='editForm' name='addCityNameBox'/><br/>
-                    <label>Corporator Name: </label>
-                    <input type='textbox' className='editForm' name='addCorpNameBox'/><br/>
-                    <label>Corporator Area: </label>
-                    <input type='textbox' className='editForm' name='addCorpAreaBox'/><br/>
-                    <label>Corporator Age: </label>
-                    <input type='textbox' className='editForm' name='addCorpAgeBox'/><br/>
-                    <input type='button' className="Edit_Del" id="upd" value='Add City' onClick={()=>this.handleAdd()}/>
-                    <input type='button' className="Edit_Del" id="canc" value='Cancel' onClick={()=>this.props.dispatch(cancelFun2())}/>
-                </form>
+                    <div className="headingh3div">
+                        <h3 className="headingh3">Add a Person with New City Name</h3>
+                    </div>
+                    <form name='addForm' className='eForm'>
+                        <label>City Name: </label>
+                        <input type='textbox' className='editForm' name='addCityNameBox'/><br/>
+                        <label>Corporator Name: </label>
+                        <input type='textbox' className='editForm' name='addCorpNameBox'/><br/>
+                        <label>Corporator Area: </label>
+                        <input type='textbox' className='editForm' name='addCorpAreaBox'/><br/>
+                        <label>Corporator Age: </label>
+                        <input type='textbox' className='editForm' name='addCorpAgeBox'/><br/>
+                        <input type='button' className="Edit_Del" id="upd" value='Add City' onClick={()=>this.handleAdd()}/>
+                        <input type='button' className="Edit_Del" id="canc" value='Cancel' onClick={()=>this.props.dispatch(cancelFun2())}/>
+                    </form>
                 </div>
             </Modal>
         )
