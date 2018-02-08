@@ -1,0 +1,46 @@
+.t1{
+    margin: 8px;
+    border: 2px solid black;
+    padding: 3px;
+    width: 32%;
+    font-size: 17px;
+    float: left;
+}
+td{
+    border: 1px solid black;
+    padding: 5px;
+}
+.Edit_Del{
+	width: 45%;
+	margin: 2px;
+	cursor: pointer;
+    
+}
+#editBut:hover{
+	background-color: lightblue;
+}
+#deleteBut:hover{
+	background-color: #f47d42;
+}
+.editForm{
+    margin: 5px;
+    font-size: 15px;
+}
+.eForm{
+    background-color: #e2d7d8;
+    margin: 5px;
+    padding: 15px;
+    font-size: 18px;
+}
+.editDiv{
+    /* float: left; */
+    /* width: 20%; */
+    width: 80%;
+    /* margin: 1em auto; */
+}
+#canc:hover{
+    background-color: #f47d42;
+}
+#upd:hover{
+    background-color: lightblue;
+}
