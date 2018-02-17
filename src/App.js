@@ -24,8 +24,8 @@ class App extends Component {
         </p>
         <div>
         <input type='button' className="addNewCity" id="upd" value='Add New City & Person' onClick={()=>this.props.dispatch(addCityFun())}/>
-        <input type='button' className="addNewCity" id="upd" value='Add New City Only' onClick={()=>this.props.dispatch(addCityOnlyFun())}/>
-        <input type='button' className="addNewCity" id="upd" value='Add New Person Only' onClick={()=>this.props.dispatch(addPersonOnlyFun())}/>
+        {/* <input type='button' className="addNewCity" id="upd" value='Add New City Only' onClick={()=>this.props.dispatch(addCityOnlyFun())}/>
+        <input type='button' className="addNewCity" id="upd" value='Add New Person Only' onClick={()=>this.props.dispatch(addPersonOnlyFun())}/> */}
         </div>
         <div>
         <TableComponent />
@@ -33,9 +33,9 @@ class App extends Component {
         <div>
         <AddCityForm />
         <EditCityForm />
-        <AddPersonForm />
-        <AddCityOnlyForm />
-        <AddPersonOnlyForm />
+        {/* <AddPersonForm /> */}
+        {/* <AddCityOnlyForm /> */}
+        {/* <AddPersonOnlyForm /> */}
         </div>
       </div>
     );
